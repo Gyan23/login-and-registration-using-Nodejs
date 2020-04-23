@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/styles.css'>
+    <!-- <script src="/assets/todo-list.js"></script> -->
+</head>
+<body>
+      <h1>customer</h1>
+      <ul class="nav justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/registration">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">profile</a>
+        </li>
+      </ul>
+      <div class="login-form">
+        <h1>Login Form</h1>
+        <form action="auth" method="POST">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit">
+        </form>
+      </div>
+</body>
+</html>
