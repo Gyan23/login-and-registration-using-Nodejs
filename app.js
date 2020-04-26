@@ -1,11 +1,19 @@
 var express = require('express');
+var session = require('express-session');
+
 var todoController = require('./controllers/customer-Controller');
 
 var app = express();
 
-//app.set('view engine','ejs');
+app.set('view engine','ejs');
 
 app.use(express.static('./public'));
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 todoController(app);
 
