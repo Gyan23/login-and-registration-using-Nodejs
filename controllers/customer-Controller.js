@@ -19,11 +19,18 @@ module.exports =function(app){
                 var query = {name:username,password:password};
                 dbo.collection("registraion").find(query).toArray(function(err, result) {
                     if (err) throw err;
-                    console.log(result);
+                   console.log(result.length); // getting 0
+                   if (result.length > 0) {
+                       console.log("hi");
+                    req.session.loggedin = true;
+                    req.session.username = username;
+                    res.sendfile('./views/homepage.html');
+                } else {
+                    res.send('Incorrect Username and/or Password!');
+                }	
                     db.close();
                 });
             });
-            res.sendfile('./views/homepage.html');
         } else {
             res.sendfile('./views/index.html');
         }
